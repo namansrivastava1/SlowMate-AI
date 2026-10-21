@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101710">
+  <title>SlowMate — Do less. Move forward.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="SlowMate home">
+        <span class="brand-mark">s<span>•</span></span>
+        <span>slowmate</span>
+      </a>
+      <div class="local-pill"><span class="pulse"></span> LOCAL-FIRST AI</div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="eyebrow"><span>✳</span> YOUR LOW-ENERGY PRODUCTIVITY PARTNER</div>
+        <h1>Do less.<br><em>Move forward.</em></h1>
+        <p class="hero-copy">Give SlowMate the task you've been putting off. Your local AI turns it into a tiny, realistic plan — no hustle culture required.</p>
+        <div class="hero-tags"><span>✦ No guilt</span><span>✦ Small steps</span><span>✦ Your device, your data</span></div>
+      </section>
+
+      <section class="workspace">
+        <div class="input-panel panel">
+          <div class="section-heading">
+            <div><span class="step-number">01</span><h2>What's weighing on you?</h2></div>
+            <span class="tiny-label">BRAIN DUMP</span>
+          </div>
+          <label for="taskInput" class="field-label">Your task, mess, or mental to-do list</label>
+          <textarea id="taskInput" maxlength="1200" placeholder="e.g. I need to study for physics, clean my desk, reply to messages, and submit my assignment..."></textarea>
+          <div class="textarea-footer"><span>Messy is welcome. Start anywhere.</span><span id="charCount">0 / 1200</span></div>
+
+          <div class="preferences">
+            <div>
+              <label class="field-label" for="energySelect">How much energy do you have?</label>
+              <select id="energySelect">
+                <option value="low">🪫 Very little — keep it tiny</option>
+                <option value="medium" selected>🌤 Some — I can do a little</option>
+                <option value="high">⚡ Plenty — let's make progress</option>
+              </select>
+            </div>
+            <div>
+              <label class="field-label" for="timeSelect">Time available</label>
+              <select id="timeSelect">
+                <option value="5">5 minutes</option>
+                <option value="10" selected>10 minutes</option>
+                <option value="20">20 minutes</option>
+                <option value="30">30 minutes</option>
+              </select>
+            </div>
+          </div>
+
+          <button id="makePlanBtn" class="primary-btn">
+            <span>Make this feel easier</span><span class="btn-arrow">↗</span>
+          </button>
+          <p class="privacy-note"><span>⌂</span> Your task is sent to Ollama running on your own computer, not to a hosted AI API.</p>
+          <div id="status" class="status" role="status" aria-live="polite">Checking your local AI connection…</div>
+        </div>
+
+        <div class="output-panel panel" id="outputPanel">
+          <div class="section-heading">
+            <div><span class="step-number">02</span><h2>Your softer plan</h2></div>
+            <span class="tiny-label">NO OVERWHELM</span>
+          </div>
+          <div id="emptyState" class="empty-state">
+            <div class="sloth-illustration" aria-hidden="true">🦥</div>
+            <h3>Slow is still a speed.</h3>
+            <p>Your plan will show up here. We'll keep it small, kind, and actually doable.</p>
+            <div class="empty-decoration"><span></span><span></span><span></span></div>
+          </div>
+          <div id="planResult" class="plan-result hidden"></div>
+        </div>
+      </section>
+
+      <section class="bottom-strip">
+        <div class="bottom-icon">↘</div>
+        <div><strong>Progress, not pressure.</strong><p>One tiny step counts. You can stop after that.</p></div>
+        <button id="clearBtn" class="text-btn">Clear workspace ↗</button>
+      </section>
+      <section class="history-section">
+        <div class="history-heading"><h2>Recent brain dumps</h2><span>Saved in this browser only</span></div>
+        <div id="historyList" class="history-list"><p class="history-empty">Your recent plans will appear here.</p></div>
+      </section>
+    </main>
+    <footer><span>slowmate © 2026</span><span>Built with open-source AI · Powered by Ollama</span></footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
